@@ -1,0 +1,24 @@
+!!! XML
+!!!
+%html
+  %head
+    %title Andrew Walker: Experience Matters
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+    = yield :styles
+  %body
+    #container
+      #card
+        %header
+          %h1 
+            =link_to content_tag(:span, "Andrew Walker"), :root
+          %h2 Experience Matters
+          = render :partial => 'layouts/_main_menu'
+        #page
+
+          = yield
+        %footer
+          %p &copy; 2008 Andrew Walker
+          =link_to "Help", {:controller=>'main', :action=>'help'}, :id => 'help_link'
+          = render :partial => 'layouts/_share_menu'
+      = yield :scripts        

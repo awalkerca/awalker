@@ -1,0 +1,294 @@
+
+//  Document:     core.css
+//  Created on:   Sept 11, 2011, 12:30 PM
+//  Author:       Andrew Walker
+//  Description:  Core css, for general format
+
+$main-color: #00B701  //#2AD100 //#52D70A
+$alt-color: #20513C
+
+$main-accent: #C030BF
+$alt-accent: #B117EA
+
+$blue: #357EC7
+$red:  #52D70A // #494949  //#650518
+$light-grey: #f1f1f1
+
+$card-width: 44em
+$card-height: 30em
+
+input[type=submit]
+  background: $main-color url('/assets/gloss.png') 0 -5px repeat-x
+  -webkit-border-radius: 3em
+  -moz-border-radius: 3em
+  border-radius: 3em
+  border: 0
+  padding: 0.5em 1em
+  color: white
+  cursor: pointer
+  margin: 0.5em 0em
+  
+  &:hover
+    background-position: 0 0
+  
+  &:active
+    background: $main-color url('/assets/darken.png') top left
+
+* 
+  padding: 0
+  margin: 0
+  font-size: 1em
+
+body
+  height: 100%
+  width: 100%
+  font-size: 62.5%
+  font-family: verdana, geneva, sans-serif
+  -webkit-text-size-adjust: 100%
+  background: url('/assets/carbon_fibre.png')
+
+a:link, a:visited, a:hover, a:active
+  text-decoration: none
+  
+a:link
+  color: $main-accent
+
+a:visit
+  color: $alt-accent
+
+nav ul
+  list-style: none
+  li
+    margin: 0
+    padding: 0
+
+#container
+  position: absolute
+  top: 5em
+  left: 50%
+  margin-left: - $card-width/2
+
+#card, header
+  -moz-box-shadow: 0em 1.5em 1.5em rgba(0,0,0,0.5)
+  -webkit-box-shadow: 0em 1.5em 1.5em rgba(0,0,0,0.5)
+  box-shadow: 0em 0.5em 0.5em rgba(0,0,0,0.5)
+
+#card
+  position: relative
+  background: $light-grey 
+  width: $card-width
+  padding: 0em 3em 3em 3em
+  margin: 0em
+  -moz-box-shadow: 0em 1.5em 1.5em rgba(0,0,0,0.5)
+  -webkit-box-shadow: 0em 1.5em 1.5em rgba(0,0,0,0.5)
+  box-shadow: 0em 0.5em 0.5em rgba(0,0,0,0.5)
+
+header
+  color: $light-grey
+  position: relative
+  width: $card-width + 4
+  left: -3em
+  top: 0em
+  padding: 1em 1em 0em 1em
+  background: $main-color url('/assets/star_burst.png') top left repeat-x
+
+  h1
+    margin: 0em 1em 0em 1em
+    background: url('/assets/logo-white.png') top center no-repeat
+    height: 4em
+  
+    a
+      height: 4em
+      display: block
+      
+      span
+        visibility: hidden
+  h2
+    text-align: center
+    font-size: 1.6em
+    padding: 0.5em 0em 0.5em 0em
+    font-weight: normal
+    
+footer
+  height: 1.6em
+  width: $card-width
+  font-size: 1em
+  position: absolute
+  bottom: 0
+  left: 2em
+  
+  #help_link
+    display: none
+
+  p
+    display: inline
+
+  help_link
+    margin-left: 3em
+    display: none
+    
+  #share_menu
+    position: absolute
+    right: 0
+    bottom: 0.6em
+    
+    li
+      float: left
+    
+      a
+        width: 16px
+        height: 16px
+        display: inline-block
+        margin: 0em 0.5em 0em 0.5em
+    
+        span
+          visibility: hidden
+      
+      a[href*="facebook"]
+        background: url('/assets/social.png') 0px -30px no-repeat
+      a[href*="twitter"]
+        background: url('/assets/social.png') 0px 0px no-repeat    
+    
+footer, .tab_content
+  color: #31353D
+
+nav#main_menu ul
+  height: 3em
+
+  
+  li
+    float: left
+    display: block
+    font-size: 1.25em
+    width: 10em
+    text-align: center
+
+    a, a:visited
+      height: 100%
+      position: relative
+      cursor: pointer
+      text-align: center
+      line-height: 2.4em
+      padding: 0.35em 1em
+
+    
+    a:link, a:visited, .current:hover, a:active
+      color: #ffffff
+
+    a:hover, .current
+      background: url('/assets/darken.png') top left
+      -webkit-border-radius: 3em
+      -moz-border-radius: 3em
+      border-radius: 3em
+      border-top: 0.1em solid #4C4C4C
+
+            
+section
+  margin: 1.5em 0em 1em 0em
+  font-size: 1.3em
+  
+  .content
+    margin: 0.75em 0em 0.75em 1em
+    display: block
+    width: 65%
+    float: left
+
+  
+  &:after
+    content: "."
+    display: block
+    height: 0
+    clear: both
+    visibility: hidden
+  
+  h2
+    padding-top: 1em
+    float: left
+    width: 25%
+    
+  p
+    margin: 0em 0 0.8em 0
+  
+  img.avatar
+    float: right
+    margin: 0 0 0 0.5em
+
+$icon_size: 32
+$icon_offset: -($icon_size + 5.5)
+$icon_col1: 0
+$icon_col2: -37.5px
+
+
+.networks li, .contacts li
+  list-style: none
+.networks li a, .contacts li a
+  background-image: url('/assets/icons32.png')
+  background-repeat: no-repeat
+  width: $icon_size * 1px
+  height: $icon_size * 1px
+  display: block
+  text-indent: -9999em
+  float: left
+  margin: 0 0.5em
+
+.lifestream
+  li
+    list-style: none
+    border-top: solid 0.1em #d1d1d1
+    padding: 0.5em
+    
+    &:first-child
+      border: none
+
+.networks
+  li 
+    a[href*="facebook"]
+      background-position: $icon_col1 (1px * $icon_offset)
+      
+      &:hover
+        background-position: $icon_col2 (1px * $icon_offset)
+  li 
+    a[href*="linkedin"]
+      background-position: $icon_col1 (7px * $icon_offset)
+      
+      &:hover
+        background-position: $icon_col2 (7px * $icon_offset)
+  li 
+    a[href*="flickr"]
+      background-position: icon_col1 (0px * $icon_offset)
+      
+      &:hover
+        background-position: $icon_col2 (0px * $icon_offset)
+  li 
+    a[href*="twitter"]
+      background-position: $icon_col1 (6px * $icon_offset)
+      
+      &:hover
+        background-position: $icon_col2 (6px * $icon_offset)
+  li 
+    a[href*="delicious"]
+      background-position: $icon_col1 (2px * $icon_offset)
+
+      &:hover
+        background-position: $icon_col2 (2px * $icon_offset)
+
+  li 
+    a[href*="github"]
+      background-position: $icon_col1 (3px * $icon_offset)
+
+      &:hover
+        background-position: $icon_col2 (3px * $icon_offset)
+
+.contacts
+  li 
+    a[href*="skype"]
+      background-position: $icon_col1 (5px * $icon_offset)
+      
+      &:hover
+        background-position: $icon_col2 (5px * $icon_offset)
+  li 
+    a[href*="vcf"]
+      background-position: $icon_col1 (4px * $icon_offset)
+      
+      &:hover
+        background-position: $icon_col2 (4px * $icon_offset)

@@ -1,0 +1,23 @@
+= form_for @message, :url=> :contact do |f|
+  #messages
+    - [:notice, :error, :success, :alert].each do |key|
+      - unless flash[key].blank?
+        %p{ :class => "flash #{key}" }= flash[key]
+    - if @message.errors.any?
+      %ul.errors
+      - @message.errors.full_messages.each do |msg|
+        %li #{msg}
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :email
+    = f.text_field :email
+  .field
+    = f.label :content, "Message"
+    = f.text_area :content
+  .hp
+    = f.label :flag, "Do not fill this box."
+    = f.text_field :flag
+  .action_bar
+    = f.submit "Send"
