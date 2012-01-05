@@ -1,16 +1,12 @@
 class MainController < ApplicationController
-  @actions = ["home", "social", "about", "help", "experiments", "work"]
+  ACTIONS = ["home", "social", "about", "help", "experiments", "work"]
   
-  @actions.each do |action|
+  ACTIONS.each do |action|
     caches_action action.to_sym
   end
   
   def home
-    if params[:e] == "yes"
-      @actions.each do |action|
-        expire_page :action => action
-      end
-    end
+    #render :layout => false
   end
   
   def social
@@ -27,6 +23,13 @@ class MainController < ApplicationController
   
   def experiments
     # render :layout => false
+  end
+  
+  def reset_cache
+   ACTIONS.each do |action|
+      expire_page :action => action
+    end  
+    redirect_to :root
   end
 
 end
