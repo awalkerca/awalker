@@ -6,8 +6,17 @@ $ ->
         url: url,
         success: (data)->
           $('#page').html($(data).find('section'))
+          $('#loading').spin
+            lines: 12
+            length: 20
+            width: 6
+            radius: 24
+            trail: 60
+            speed: 1
+            shadow: true
+            
           # history.pushState(null,"",url)
-          $("#lifestream").lifestream(
+          $("#lifestream").lifestream
             limit: 5,
             list:[
               service: "github",
@@ -20,8 +29,9 @@ $ ->
               user: "awalkerca"
             ],
             feedloaded: ->
-              $('ul.lifestream').slideDown('slow')
-          )
+              $('loading').spin(false)
+              $('#loading').hide()
+          
           $('#page').slideDown()
       )
       

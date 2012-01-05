@@ -8,4 +8,5 @@
 //= require jquery_ujs
 //= require jquery.lifestream
 //= require ribbon
+//= require spin.min
 //= require_tree .
